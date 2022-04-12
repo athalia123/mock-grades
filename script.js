@@ -129,7 +129,7 @@ function scores() {
         total_max = total[w_short].length-1
         real_total =  Number(total[w_short][total_max])
         console.log("result: " + result);
-        document.getElementById('result').innerHTML = result*real_total; 
+        document.getElementById('result').innerHTML = Math.round(result*real_total); 
         document.getElementById('total').innerHTML = real_total; 
     }
     
@@ -138,5 +138,4 @@ function scores() {
 
 function refresh() {
     document.location.reload(true);
-    
 }
