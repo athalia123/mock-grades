@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <title>Calculate Mock Exam grades</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Calculate Weighted IGCSE Mock Exam Grades</h1>
+
+        <div class="step_1">
+            <h2>1. Hover the button and choose a subject</h2>
+            <div class="dropdown">
+                <button class="dropbtn">Subject</button>
+                <div class="dropdown-content">
+                    <a id="math_2" onclick="subject(this.id, this)" data-papers="2">Maths (Extended)</a>
+                    <a id="math_1" onclick="subject(this.id, this)" data-papers="1">Maths (Core)</a>
+                    <a id="efl" onclick="subject(this.id, this)" data-papers="0">EFL</a>
+                </div>
+            </div>
+            &nbsp&nbsp&nbsp
+            <h3 id="subject">Subject</h3>
+        </div>
+        <!--<h3 id="test">TEST</h3>-->
+        <br>
+        <hr>
+
+        <br>
+        <h2>2. INPUT SCORES</h2>
+        <div>
+            <table>
+                <tr>
+                    <th class="input_score"><h4>Paper#/input</h4></th>
+                    <th><h4>Raw total</h4></th>
+                    <th><h4>Score Fraction</h4></th>
+                    <th><h4>Weight</h4></th>
+                    <th><h4>Final weight</h4></th>
+                </tr>
+                <tr id="row1" style="display: none;">
+                    <td class="input_score">
+                        <label id="label1">Paper -:</label>
+                        <input type="number" id="score1" min="0" value="0">
+                    </td>
+                    <td class="num" id="total1"></td>
+                    <td class="num" id="per1"></td>
+                    <td class="num" id="weight1"></td>
+                    <td class="num" id="a_w1"></td>
+                </tr>
+                <tr id="row2" style="display: none;">
+                    <td class="input_score">
+                        <label id="label2">Paper -:</label>
+                        <input type="number" id="score2" min="0" value="0">
+                    </td>
+                        <td class="num" id="total2"></td>
+                        <td class="num" id="per2"></td>
+                        <td class="num" id="weight2"></td>
+                        <td class="num" id="a_w2"></td>
+                </tr>
+                <tr id="row3" style="display: none;">
+                    <td class="input_score">
+                        <label id="label3">Paper -:</label>
+                        <input type="number" id="score3" min="0" value="0">
+                    </td>
+                        <td class="num" id="total3"></td>
+                        <td class="num" id="per3"></td>
+                        <td class="num" id="weight3"></td>
+                        <td class="num" id="a_w3"></td>
+                    
+                </tr>
+                <tr id="row4" style="display: none;">
+                    <td class="input_score">
+                        <label id="label4">Paper -:</label>
+                        <input type="number" id="score4" min="0" value="0">
+                    </td>
+                    <td class="num" id="total4"></td>
+                    <td class="num" id="per4"></td>
+                    <td class="num" id="weight4"></td>
+                    <td class="num" id="a_w4"></td>
+    
+                </tr>
+
+
+            </table>
+            <br>
+            <button class="button" onclick="scores()">SUBMIT</button>
+        </div>
+        <br><br><br>
+        <div>
+            <table class="result_t">
+                <tr>
+                    <td><h3>Final Weighted score: </h3></td>
+                    <td> <h3 id="result">Result</h3> </td>
+                    <td> / </td>
+                    <td> <h3 id="total"></h3></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <button class="button" onclick="refresh()">Click to Refresh</button>
+        
+
+        <script src="script.js"></script>
+        
+    </body>
+</html>
