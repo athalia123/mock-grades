@@ -1,22 +1,61 @@
+
+
+// 0 - 4, 1 - core, 2 - ext, 3 - core(sci), 4 - ext(sci)
+let paper = [[1,2,3,4], [1,3], [2,4], [1,3,'5/6'], [2,4,'5/6']]
+
 let sub_n = {
-    'math_1': "Maths (Core)",
-    'math_2': "Maths (Extended)",
-    'efl': "EFL"
+    'math_1': "0580 Maths (Core)",
+    'math_2': "0580 Maths (Extended)",
+    'efl': "0500 EFL",
+    "chem_2": "0620 Chemistry (Extended)", 
+    "chem_1": "0620 Chemistry (Core)", 
+    "phy_1": "0410 Physics (Core)", 
+    "phy_2": "0410 Physics (Extended)",
+    "bio_1": "0610 Biology (Core)", 
+    "bio_2": "0610 Biology (Extended)", 
+    "econ": "0455 Economics", 
+    "mand_f": "0547 Chinese (Mandarin) Foreign Language", 
+    "ict": "0417 ICT", 
+    "math_a": "0606 Maths Additional", 
+    "busi": "0450 Business Studies"
 }
 
 let total = {
-    'math_1': [56, 104, 200],
+    'math_1': [56, 104, 160],
     'math_2': [70, 130, 200],
-    'efl': [80, 80, 160]
+    'efl': [80, 80, 160],
+    'chem_2': [40, 80, 40, 200],
+    'chem_1': [40, 80, 40, 200], 
+    'phy_1': [40, 80, 40, 200],
+    'phy_2': [40, 80, 40, 200], 
+    'bio_1': [40, 80, 40, 200], 
+    'bio_2': [40, 80, 40, 200],
+    'econ': [30, 90, 150], 
+    'mand_f': [30, 36, 100, 45, 200], 
+    'ict': [100, 80, 80, 300], 
+    'math_a': [80, 80, 160], 
+    'busi': [80, 80, 160]
 }
 
 let weight = {
-    'math_1': [0.35, 0.65],
-    'math_2': [0.35, 0.65],
-    'efl': [0.50, 0.50]
+    'math_1': [1, 1],
+    'math_2': [1, 1],
+    'efl': [1, 1],
+    'chem_2': [1.5, 1.25, 1], 
+    'chem_1': [1.5, 1.25, 1], 
+    'phy_1': [1.5, 1.25, 1], 
+    'phy_2': [1.5, 1.25, 1], 
+    'bio_1': [1.5, 1.25, 1], 
+    'bio_2': [1.5, 1.25, 1], 
+    'econ': [1.5, 1.16667],
+    'mand_f': [1.66667, 1.38889, 0.5, 1.11111], 
+    'ict': [1.2, 1.125, 1.125], 
+    'math_a': [1, 1],
+    'busi': [1, 1]
+
 }
 
-let paper = [[1,2,3,4], [1,3], [2,4], [1,3,'5/6'], [2,4,'5/6']]
+
 
 console.log(total['math_1'][0])
 console.log(document.getElementById('label1').innerHTML)
@@ -109,7 +148,7 @@ function scores() {
             var total_n = total[w_short][i];
             var per = score / total[w_short][i];
             var weight_n = weight[w_short][i];
-            var after_w = per * weight_n
+            var after_w = score * weight_n
 
 
             var total_id = "total" + c
@@ -129,7 +168,7 @@ function scores() {
         total_max = total[w_short].length-1
         real_total =  Number(total[w_short][total_max])
         console.log("result: " + result);
-        document.getElementById('result').innerHTML = Math.round(result*real_total); 
+        document.getElementById('result').innerHTML = Math.round(result); 
         document.getElementById('total').innerHTML = real_total; 
     }
     

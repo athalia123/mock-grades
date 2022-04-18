@@ -12,10 +12,28 @@
             <h2>1. Hover the button and choose a subject</h2>
             <div class="dropdown">
                 <button class="dropbtn">Subject</button>
-                <div class="dropdown-content">
-                    <a id="math_2" onclick="subject(this.id, this)" data-papers="2">Maths (Extended)</a>
-                    <a id="math_1" onclick="subject(this.id, this)" data-papers="1">Maths (Core)</a>
+                <div class="dropdown-content scrollable-menu">
                     <a id="efl" onclick="subject(this.id, this)" data-papers="0">EFL</a>
+                    
+                    <a id="math_1" onclick="subject(this.id, this)" data-papers="1">Maths (Core)</a>
+                    <a id="math_2" onclick="subject(this.id, this)" data-papers="2">Maths (Extended)</a>
+                    
+                    
+                    <a id="chem_1" onclick="subject(this.id, this)" data-papers="4">Chemistry (Core)</a>
+                    <a id="chem_2" onclick="subject(this.id, this)" data-papers="4">Chemistry (Extended)</a>
+                    
+                    <a id="phy_1" onclick="subject(this.id, this)" data-papers="4">Physics (Core)</a>
+                    <a id="phy_2" onclick="subject(this.id, this)" data-papers="4">Physics (Extended)</a>
+
+                    <a id="bio_1" onclick="subject(this.id, this)" data-papers="4">Biology (Core)</a>
+                    <a id="bio_2" onclick="subject(this.id, this)" data-papers="4">Biology (Extended)</a>
+
+                    <a id="econ" onclick="subject(this.id, this)" data-papers="0">Economics</a>
+                    <a id="busi" onclick="subject(this.id, this)" data-papers="0">Business Studies</a>
+                    <a id="mand_f" onclick="subject(this.id, this)" data-papers="0">Chinese (Mandarin)</a>
+                    <a id="ict" onclick="subject(this.id, this)" data-papers="0">ICT</a>
+                    <a id="math_a" onclick="subject(this.id, this)" data-papers="0">Maths Additional</a>
+
                 </div>
             </div>
             &nbsp&nbsp&nbsp
@@ -27,14 +45,15 @@
 
         <br>
         <h2>2. INPUT SCORES</h2>
+        <i>*calculated the scores according to the guide from Cambridge (link at the bottom)</i>
         <div>
             <table>
                 <tr>
-                    <th class="input_score"><h4>Paper#/input</h4></th>
-                    <th><h4>Raw total</h4></th>
+                    <th class="input_score"><h4>Paper#: Raw Marks</h4></th>
+                    <th><h4>Raw Total</h4></th>
                     <th><h4>Score Fraction</h4></th>
-                    <th><h4>Weight</h4></th>
-                    <th><h4>Final weight</h4></th>
+                    <th><h4>Weighting Factor</h4></th>
+                    <th><h4>Final weighted score</h4></th>
                 </tr>
                 <tr id="row1" style="display: none;">
                     <td class="input_score">
@@ -88,18 +107,50 @@
         <div>
             <table class="result_t">
                 <tr>
-                    <td><h3>Final Weighted score: </h3></td>
+                    <td><h3>Final Syllabus Grade: </h3></td>
                     <td> <h3 id="result">Result</h3> </td>
                     <td> / </td>
                     <td> <h3 id="total"></h3></td>
                 </tr>
             </table>
         </div>
-        <br>
+        <p><i>*Weighted score = raw marks x weight factor</i></p>
+        <p><i>*Final syllabus grade = sum of weighted scores</i></p>
+        
         <button class="button" onclick="refresh()">Click to Refresh</button>
         
+        <br><br>
+        <hr>
+        <div>
+            <h4>Grade Thresholds links (from Cambridge website):</h4>
+            <ol>
+                <li>
+                    <p><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/grade-threshold-tables/june-2019/" target="_blank">
+                    June 2019</a></p>
+                </li>
+                <li>
+                    <p><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/grade-threshold-tables/november-2019/" target="_blank">
+                        November 2019
+                    </a></p>
+                </li>
+            </ol>
+        </div>
+        <div>
+            <h4>Other resources I used (from Cambridge website):</h4>
+            <ol>
+                <li><p><a href="https://www.cambridgeinternational.org/Images/206341-syllabus-component-weighting-factors.pdf" target="_blank">
+                    Weighting factors (2021 series')</a></p></li>
+                <li><p><a href="https://www.cambridgeinternational.org/Images/206374-guide-to-converting-component-marks-into-syllabus-grades.pdf" target="_blank">
+                    Convert component raw marks to syllabus grade</a></p></li>
+            </ol>
+        </div>
+        
+        <div class="footer">
+            <p>Created by Athalia, April 2022</p>
+            <p><a href="https://github.com/athalia123/mock-grades" target="_blank">Link to Source Code</a> on Github</p>
+            <p><i>Made for personal use at MISB to calculate IGCSE mock exam scores based on June 2021 Weighting factors</i></p>
+        </div>
 
         <script src="script.js"></script>
-        
     </body>
 </html>
