@@ -1,10 +1,14 @@
 body {
-    margin-top: 5%;  
-    margin-left: 10%;
-    margin-right: 10%;
+    
     font-family: Calibri, 'Trebuchet MS', sans-serif;
       
-  }
+}
+
+.body {
+  margin-top: 5%;  
+  margin-left: 10%;
+  margin-right: 10%;
+}
 
 #subject {
     display: inline-block;
@@ -116,11 +120,15 @@ th {
 
 
 .footer {
-  position: fixed;
-  left: 0;
+  
+  padding: 5px;
   width: 100%;
   background-color: rgb(226, 226, 226);
   color: black;
-  font-size: 10px;
-  text-align: left;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer p {
+  margin-left: 2%;
 }

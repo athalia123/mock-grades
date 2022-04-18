@@ -6,149 +6,163 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Calculate Weighted IGCSE Mock Exam Grades</h1>
+        <div class="body">
+            <h1>Calculate Weighted IGCSE Mock Exam Grades</h1>
 
-        <div class="step_1">
-            <h2>1. Hover the button and choose a subject</h2>
-            <div class="dropdown">
-                <button class="dropbtn">Subject</button>
-                <div class="dropdown-content scrollable-menu">
-                    <a id="efl" onclick="subject(this.id, this)" data-papers="0">EFL</a>
-                    
-                    <a id="math_1" onclick="subject(this.id, this)" data-papers="1">Maths (Core)</a>
-                    <a id="math_2" onclick="subject(this.id, this)" data-papers="2">Maths (Extended)</a>
-                    
-                    
-                    <a id="chem_1" onclick="subject(this.id, this)" data-papers="4">Chemistry (Core)</a>
-                    <a id="chem_2" onclick="subject(this.id, this)" data-papers="4">Chemistry (Extended)</a>
-                    
-                    <a id="phy_1" onclick="subject(this.id, this)" data-papers="4">Physics (Core)</a>
-                    <a id="phy_2" onclick="subject(this.id, this)" data-papers="4">Physics (Extended)</a>
+            <div class="step_1">
+                <h2>1. Hover the button and choose a subject</h2>
+                <div class="dropdown">
+                    <button class="dropbtn">Subject</button>
+                    <div class="dropdown-content scrollable-menu">
+                        <a id="efl" onclick="subject(this.id, this)" data-papers="0">EFL</a>
+                        
+                        <a id="math_1" onclick="subject(this.id, this)" data-papers="1">Maths (Core)</a>
+                        <a id="math_2" onclick="subject(this.id, this)" data-papers="2">Maths (Extended)</a>
+                        
+                        
+                        <a id="chem_1" onclick="subject(this.id, this)" data-papers="4">Chemistry (Core)</a>
+                        <a id="chem_2" onclick="subject(this.id, this)" data-papers="4">Chemistry (Extended)</a>
+                        
+                        <a id="phy_1" onclick="subject(this.id, this)" data-papers="4">Physics (Core)</a>
+                        <a id="phy_2" onclick="subject(this.id, this)" data-papers="4">Physics (Extended)</a>
 
-                    <a id="bio_1" onclick="subject(this.id, this)" data-papers="4">Biology (Core)</a>
-                    <a id="bio_2" onclick="subject(this.id, this)" data-papers="4">Biology (Extended)</a>
+                        <a id="bio_1" onclick="subject(this.id, this)" data-papers="4">Biology (Core)</a>
+                        <a id="bio_2" onclick="subject(this.id, this)" data-papers="4">Biology (Extended)</a>
 
-                    <a id="econ" onclick="subject(this.id, this)" data-papers="0">Economics</a>
-                    <a id="busi" onclick="subject(this.id, this)" data-papers="0">Business Studies</a>
-                    <a id="mand_f" onclick="subject(this.id, this)" data-papers="0">Chinese (Mandarin)</a>
-                    <a id="ict" onclick="subject(this.id, this)" data-papers="0">ICT</a>
-                    <a id="math_a" onclick="subject(this.id, this)" data-papers="0">Maths Additional</a>
+                        <a id="econ" onclick="subject(this.id, this)" data-papers="0">Economics</a>
+                        <a id="busi" onclick="subject(this.id, this)" data-papers="0">Business Studies</a>
+                        <a id="mand_f" onclick="subject(this.id, this)" data-papers="0">Chinese (Mandarin)</a>
+                        <a id="ict" onclick="subject(this.id, this)" data-papers="0">ICT</a>
+                        <a id="math_a" onclick="subject(this.id, this)" data-papers="0">Maths Additional</a>
 
+                    </div>
                 </div>
+                &nbsp&nbsp&nbsp
+                <h3 id="subject">Subject</h3>
             </div>
-            &nbsp&nbsp&nbsp
-            <h3 id="subject">Subject</h3>
-        </div>
-        <!--<h3 id="test">TEST</h3>-->
-        <br>
-        <hr>
-
-        <br>
-        <h2>2. INPUT SCORES</h2>
-        <i>*calculated the scores according to the guide from Cambridge (link at the bottom)</i>
-        <div>
-            <table>
-                <tr>
-                    <th class="input_score"><h4>Paper#: Raw Marks</h4></th>
-                    <th><h4>Raw Total</h4></th>
-                    <th><h4>Score Fraction</h4></th>
-                    <th><h4>Weighting Factor</h4></th>
-                    <th><h4>Final weighted score</h4></th>
-                </tr>
-                <tr id="row1" style="display: none;">
-                    <td class="input_score">
-                        <label id="label1">Paper -:</label>
-                        <input type="number" id="score1" min="0" value="0">
-                    </td>
-                    <td class="num" id="total1"></td>
-                    <td class="num" id="per1"></td>
-                    <td class="num" id="weight1"></td>
-                    <td class="num" id="a_w1"></td>
-                </tr>
-                <tr id="row2" style="display: none;">
-                    <td class="input_score">
-                        <label id="label2">Paper -:</label>
-                        <input type="number" id="score2" min="0" value="0">
-                    </td>
-                        <td class="num" id="total2"></td>
-                        <td class="num" id="per2"></td>
-                        <td class="num" id="weight2"></td>
-                        <td class="num" id="a_w2"></td>
-                </tr>
-                <tr id="row3" style="display: none;">
-                    <td class="input_score">
-                        <label id="label3">Paper -:</label>
-                        <input type="number" id="score3" min="0" value="0">
-                    </td>
-                        <td class="num" id="total3"></td>
-                        <td class="num" id="per3"></td>
-                        <td class="num" id="weight3"></td>
-                        <td class="num" id="a_w3"></td>
-                    
-                </tr>
-                <tr id="row4" style="display: none;">
-                    <td class="input_score">
-                        <label id="label4">Paper -:</label>
-                        <input type="number" id="score4" min="0" value="0">
-                    </td>
-                    <td class="num" id="total4"></td>
-                    <td class="num" id="per4"></td>
-                    <td class="num" id="weight4"></td>
-                    <td class="num" id="a_w4"></td>
-    
-                </tr>
-
-
-            </table>
+            <!--<h3 id="test">TEST</h3>-->
             <br>
-            <button class="button" onclick="scores()">SUBMIT</button>
-        </div>
-        <br><br><br>
-        <div>
-            <table class="result_t">
-                <tr>
-                    <td><h3>Final Syllabus Grade: </h3></td>
-                    <td> <h3 id="result">Result</h3> </td>
-                    <td> / </td>
-                    <td> <h3 id="total"></h3></td>
-                </tr>
-            </table>
-        </div>
-        <p><i>*Weighted score = raw marks x weight factor</i></p>
-        <p><i>*Final syllabus grade = sum of weighted scores</i></p>
+            <hr>
+
+            <br>
+            <h2>2. INPUT SCORES</h2>
+            <i>*calculated the scores according to the guide from Cambridge (link at the bottom)</i>
+            <div>
+                <table>
+                    <tr>
+                        <th class="input_score"><h4>Paper#: Raw Marks</h4></th>
+                        <th><h4>Raw Total</h4></th>
+                        <th><h4>Score Fraction</h4></th>
+                        <th><h4>Weighting Factor</h4></th>
+                        <th><h4>Final weighted score</h4></th>
+                    </tr>
+                    <tr id="row1" style="display: none;">
+                        <td class="input_score">
+                            <label id="label1">Paper -:</label>
+                            <input type="number" id="score1" min="0" value="0">
+                        </td>
+                        <td class="num" id="total1"></td>
+                        <td class="num" id="per1"></td>
+                        <td class="num" id="weight1"></td>
+                        <td class="num" id="a_w1"></td>
+                    </tr>
+                    <tr id="row2" style="display: none;">
+                        <td class="input_score">
+                            <label id="label2">Paper -:</label>
+                            <input type="number" id="score2" min="0" value="0">
+                        </td>
+                            <td class="num" id="total2"></td>
+                            <td class="num" id="per2"></td>
+                            <td class="num" id="weight2"></td>
+                            <td class="num" id="a_w2"></td>
+                    </tr>
+                    <tr id="row3" style="display: none;">
+                        <td class="input_score">
+                            <label id="label3">Paper -:</label>
+                            <input type="number" id="score3" min="0" value="0">
+                        </td>
+                            <td class="num" id="total3"></td>
+                            <td class="num" id="per3"></td>
+                            <td class="num" id="weight3"></td>
+                            <td class="num" id="a_w3"></td>
+                        
+                    </tr>
+                    <tr id="row4" style="display: none;">
+                        <td class="input_score">
+                            <label id="label4">Paper -:</label>
+                            <input type="number" id="score4" min="0" value="0">
+                        </td>
+                        <td class="num" id="total4"></td>
+                        <td class="num" id="per4"></td>
+                        <td class="num" id="weight4"></td>
+                        <td class="num" id="a_w4"></td>
         
-        <button class="button" onclick="refresh()">Click to Refresh</button>
-        
-        <br><br>
-        <hr>
-        <div>
-            <h4>Grade Thresholds links (from Cambridge website):</h4>
-            <ol>
-                <li>
-                    <p><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/grade-threshold-tables/june-2019/" target="_blank">
-                    June 2019</a></p>
-                </li>
-                <li>
-                    <p><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/grade-threshold-tables/november-2019/" target="_blank">
-                        November 2019
-                    </a></p>
-                </li>
-            </ol>
+                    </tr>
+
+
+                </table>
+                <br>
+                <button class="button" onclick="scores()">SUBMIT</button>
+            </div>
+            <br><br><br>
+            <div>
+                <table class="result_t">
+                    <tr>
+                        <td><h3>Final Syllabus Grade: </h3></td>
+                        <td> <h3 id="result">Result</h3> </td>
+                        <td> / </td>
+                        <td> <h3 id="total"></h3></td>
+                    </tr>
+                </table>
+            </div>
+            <p><i>*Weighted score = raw marks x weight factor</i></p>
+            <p><i>*Final syllabus grade = sum of weighted scores</i></p>
+            
+            <button class="button" onclick="refresh()">Click to Refresh</button>
+            
+            <br><br>
+            <hr>
+            <div>
+                <h4>Check out your letter grade by comparing with Grade Thresholds below (from Cambridge website):</h4>
+                <ol>
+                    <li>
+                        <p><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/grade-threshold-tables/21november2021" target="_blank" >
+                        November 2021</a></p>
+                    </li>
+                    <li>
+                        <p><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/grade-threshold-tables/june-2021-igcse" target="_blank" >
+                        June 2021</a></p>
+                    </li>
+                    <li>
+                        <p><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/grade-threshold-tables/november-2020" target="_blank" >
+                        November 2020</a></p>
+                    </li>
+                    <li>
+                        <p><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/grade-threshold-tables/november-2019/" target="_blank">
+                        November 2019</a></p>
+                    </li>
+                    <li>
+                        <p><a href="https://www.cambridgeinternational.org/programmes-and-qualifications/cambridge-upper-secondary/cambridge-igcse/grade-threshold-tables/june-2019/" target="_blank">
+                        June 2019</a></p>
+                    </li>
+                    
+                </ol>
+            </div>
+            <div>
+                <h4>Other resources used (from Cambridge website):</h4>
+                <ol>
+                    <li><p><a href="https://www.cambridgeinternational.org/Images/206341-syllabus-component-weighting-factors.pdf" target="_blank">
+                        Weighting factors (2021 series')</a></p></li>
+                    <li><p><a href="https://www.cambridgeinternational.org/Images/206374-guide-to-converting-component-marks-into-syllabus-grades.pdf" target="_blank">
+                        Convert component raw marks to syllabus grade</a></p></li>
+                </ol>
+            </div>
         </div>
-        <div>
-            <h4>Other resources I used (from Cambridge website):</h4>
-            <ol>
-                <li><p><a href="https://www.cambridgeinternational.org/Images/206341-syllabus-component-weighting-factors.pdf" target="_blank">
-                    Weighting factors (2021 series')</a></p></li>
-                <li><p><a href="https://www.cambridgeinternational.org/Images/206374-guide-to-converting-component-marks-into-syllabus-grades.pdf" target="_blank">
-                    Convert component raw marks to syllabus grade</a></p></li>
-            </ol>
-        </div>
-        
+        <br>
         <div class="footer">
-            <p>Created by Athalia, April 2022</p>
-            <p><a href="https://github.com/athalia123/mock-grades" target="_blank">Link to Source Code</a> on Github</p>
-            <p><i>Made for personal use at MISB to calculate IGCSE mock exam scores based on June 2021 Weighting factors</i></p>
+            <p>Created by Athalia, April 2022 | Source code on 
+            <a href="https://github.com/athalia123/mock-grades" target="_blank">Github</a></p>
+            <p><i>Made for personal use to calculate IGCSE mock exam scores based on June 2021 Weighting factors</i></p>
         </div>
 
         <script src="script.js"></script>
